@@ -1,0 +1,25 @@
+﻿<Window x:Class="SuspendWarning.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bedtime" Height="161" Width="448" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Topmost="True" >
+    <Window.Resources>
+        <Storyboard x:Key="fadeOut">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:2" />
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Rectangle Fill="White" x:Name="_rWarningColor" Grid.RowSpan="2" />
+        <Border BorderBrush="Black" BorderThickness="2" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        
+        <TextBlock Text="Suspending Computer in 30 seconds..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" x:Name="_suspendText" />
+        
+        <TextBlock Text="ಠ_ಠ" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" />
+        <Button Content="Snooze for 10 minutes" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" x:Name="_bSnooze" />
+
+    </Grid>
+</Window>
